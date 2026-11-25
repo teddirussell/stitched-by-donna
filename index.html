@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stitched by Donna</title>
+<meta name="description" content="Handmade quilted treat bags, coasters, gift tags and decorations in 100% cotton, made by Donna Russell in Alstonville, NSW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,100,1&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: proud, generous, a bit cheeky — Christmas craft stall, not a boutique
+   IDEA: the page is a quilt — patchwork top, sashing between blocks, a bound edge
+   PICTURE: a full-bleed wall of quilt blocks that piece themselves together, with an appliquéd name label
+   COLOUR and TYPE: poinsettia red, spruce, cotton white, fairy-floss pink, a dab of sunshine; Fraunces (soft, wonky) + Figtree
+   LAYOUT: patchwork hero → swatch filters → product quilt with spruce sashing → big "message Donna" band → about → binding */
+:root{color-scheme:light dark;
+--red:#c8102e;--spruce:#0f5b4f;--pink:#ff9ec4;--sun:#ffc93c;--cotton:#ffffff;--inkc:#24161a;
+--bg:light-dark(#ffffff,#1c1215);--ink:light-dark(#24161a,#f8eef0);--soft:light-dark(#6e5a5f,#c8b4b9);--card:light-dark(#ffffff,#2a1c20)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:20px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Figtree,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.02em}
+h3{font-size:22px;font-weight:700}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(4vw,16px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;font:700 16px Figtree,sans-serif;text-decoration:none;border:2.5px solid var(--inkc);color:var(--inkc);background:transparent}
+.btn.fill{background:var(--red);border-color:var(--red);color:#fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--inkc)}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+/* ---------- hero: patchwork ---------- */
+.hero{position:relative;height:clamp(560px,88vh,820px);overflow:hidden;background:var(--spruce)}
+.patch{position:absolute;inset:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(84px,11vw,150px),1fr));grid-auto-rows:auto;gap:0}
+.patch svg{display:block;width:100%;aspect-ratio:1;transform-origin:center}
+.hero.go .patch svg{animation:piece .7s cubic-bezier(.2,.9,.25,1.2) both;animation-delay:var(--d)}
+@keyframes piece{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:none}}
+.label{position:absolute;left:max(4vw,16px);bottom:max(5vw,24px);width:min(640px,calc(100% - 32px));background:var(--cotton);color:var(--inkc);padding:clamp(24px,3.4vw,44px);box-shadow:10px 10px 0 var(--inkc)}
+.label::before{content:"";position:absolute;inset:9px;border:2px dashed var(--red);pointer-events:none}
+.label h1{font-size:clamp(54px,8.6vw,118px);font-weight:900;letter-spacing:-.035em;color:var(--red);line-height:.9}
+.label h1 span{display:block;font-size:.42em;font-weight:500;font-style:italic;color:var(--inkc);letter-spacing:-.01em;margin-bottom:.1em}
+.label p{font-size:clamp(17px,1.6vw,20px);margin:18px 0 24px;max-width:40ch;position:relative}
+.label .btns{display:flex;flex-wrap:wrap;gap:12px;position:relative}
+.top{position:absolute;top:0;right:0;left:0;display:flex;justify-content:flex-end;gap:2px;padding:14px max(4vw,16px);z-index:2}
+.top a{background:var(--cotton);color:var(--inkc);text-decoration:none;font-weight:700;font-size:15px;padding:10px 14px;box-shadow:3px 3px 0 var(--inkc)}
+.top a+a{margin-left:8px}
+
+/* ---------- facts as a binding strip ---------- */
+.binding{background:var(--red);color:#fff;border-block:6px solid var(--inkc)}
+.binding .wrap{display:flex;flex-wrap:wrap;gap:8px 40px;justify-content:space-between;padding-block:18px;font-weight:700;font-size:17px}
+.binding b{font-family:Fraunces,serif;font-weight:800;font-size:22px;margin-right:6px;color:var(--sun)}
+
+/* ---------- catalogue: a quilt ---------- */
+.makes{padding:clamp(56px,8vw,110px) 0}
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px 48px;align-items:end;margin-bottom:34px}
+.intro p{margin:0;color:var(--soft);max-width:46ch;font-size:18px}
+.swatches{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.swatches button{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px 0 6px;font:700 15px Figtree,sans-serif;color:var(--ink);background:var(--card);border:2px solid currentColor;cursor:pointer;opacity:.62}
+.swatches button svg{width:34px;height:34px;flex:none}
+.swatches button[aria-pressed=true]{opacity:1;box-shadow:4px 4px 0 var(--red);border-color:var(--ink)}
+.swatches button:hover{opacity:1}
+.quilt{background:var(--spruce);padding:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;
+ background-image:radial-gradient(circle at 7px 7px,var(--sun) 3.5px,transparent 4px);background-size:calc(100%) 100%}
+.item{background:var(--card);display:flex;flex-direction:column;position:relative}
+.item.big{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.item.big .ph{aspect-ratio:auto;min-height:320px}
+.item.big .bd{display:flex;flex-direction:column;justify-content:center;padding:28px}
+.item.big p{font-size:17px}
+.item .ph{aspect-ratio:1;position:relative;overflow:hidden}
+.item.custom{background:var(--red);color:#fff;justify-content:center;padding:28px;text-decoration:none}
+.item.custom h3{font-size:clamp(28px,3vw,40px);max-width:16ch;margin-bottom:10px}
+.item.custom p{color:#ffe3ea;font-size:16px;margin-bottom:18px}
+.item.custom span{font-weight:700;border-bottom:3px solid var(--sun);align-self:flex-start}
+.item.custom:hover{background:#a90d27}
+.item .ph>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.item .bd{padding:16px 18px 18px}
+.item .cat{font-size:14px;color:var(--soft);display:block;margin-bottom:4px}
+.item h3{margin-bottom:8px}
+.item.big h3{font-size:clamp(26px,3vw,36px)}
+.item p{margin:0 0 14px;color:var(--soft);font-size:15.5px}
+.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price{font-family:Fraunces,serif;font-weight:800;font-size:30px;color:var(--red);white-space:nowrap;line-height:1}
+.price.ask{font-family:Figtree,sans-serif;font-size:15px;font-weight:700;color:var(--ink);border-bottom:2px solid var(--pink)}
+.size{font-size:14px;color:var(--soft);white-space:nowrap}
+.empty{grid-column:1/-1;background:var(--card);padding:48px;text-align:center}
+.note{font-size:14px;color:var(--soft);margin-top:14px}
+
+/* ---------- message band ---------- */
+.msg{background:var(--pink);color:var(--inkc);padding:clamp(56px,8vw,110px) 0;position:relative;overflow:hidden}
+.msg .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px 64px;align-items:start}
+.phone{display:block;font-family:Fraunces,serif;font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:900;font-size:clamp(40px,5.4vw,78px);letter-spacing:-.03em;line-height:.95;color:var(--red);text-decoration:none;white-space:nowrap;margin:18px 0 10px}
+.phone:hover{text-decoration:underline;text-decoration-thickness:6px;text-underline-offset:8px}
+.alt{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:18px;font-weight:700}
+.alt a{text-decoration:none;border-bottom:3px solid var(--inkc);overflow-wrap:anywhere}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:54px minmax(0,1fr);gap:14px;padding:18px 0;border-top:2.5px solid var(--inkc)}
+.steps li:last-child{border-bottom:2.5px solid var(--inkc)}
+.steps li::before{content:counter(s);font-family:Fraunces,serif;font-weight:900;font-size:44px;line-height:.9;color:var(--red)}
+.steps h3{font-size:21px;margin-bottom:4px}
+.steps p{margin:0}
+
+/* ---------- about ---------- */
+.about{padding:clamp(56px,8vw,110px) 0}
+.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 72px;align-items:center}
+.about .art{aspect-ratio:1;max-width:440px;width:100%;box-shadow:12px 12px 0 var(--red)}
+.about .art svg{width:100%;height:100%;display:block}
+.about p{font-size:19px;max-width:56ch;margin:18px 0 0}
+.about .sig{font-family:Fraunces,serif;font-style:italic;font-size:26px;color:var(--red);margin-top:22px}
+
+footer{background:var(--inkc);color:#f3e6e9;padding:26px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:#fff}
+.edge{height:22px;background:repeating-linear-gradient(-45deg,var(--red) 0 12px,var(--cotton) 12px 24px)}
+
+@media(max-width:860px){
+ .intro,.msg .wrap,.about .wrap{grid-template-columns:minmax(0,1fr)}
+ .item.big{grid-column:auto;display:flex}
+ .item.big .bd{padding:16px 18px 18px}
+ .item.big .ph{aspect-ratio:1;min-height:0}
+}
+@media(max-width:600px){
+ .hero{height:auto;min-height:640px}
+ .label{left:12px;right:12px;width:auto;bottom:22px;box-shadow:6px 6px 0 var(--inkc)}
+ .top{justify-content:flex-start;overflow-x:auto}
+ .top a{font-size:14px;padding:9px 11px;white-space:nowrap}
+ .quilt{padding:10px;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero.go .patch svg{animation:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<!-- shared fabrics -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <pattern id="f-dotpink" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#fff"/><circle cx="7" cy="7" r="2.4" fill="#ff9ec4"/></pattern>
+  <pattern id="f-dotred" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#c8102e"/><circle cx="6" cy="6" r="1.8" fill="#fff"/></pattern>
+  <pattern id="f-candy" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#fff"/><rect width="8" height="16" fill="#c8102e"/></pattern>
+  <pattern id="f-check" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#0f5b4f"/><rect width="8" height="8" fill="#2d8a78"/><rect x="8" y="8" width="8" height="8" fill="#2d8a78"/></pattern>
+  <pattern id="f-star" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#0f5b4f"/><path d="M11 5l1.7 4h4.3l-3.5 2.6 1.3 4.3L11 13.4l-3.8 2.5 1.3-4.3L5 9h4.3z" fill="#ffc93c"/></pattern>
+  <pattern id="f-sprig" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#ffe3ee"/><path d="M5 15q5-10 10-10" stroke="#0f5b4f" stroke-width="1.6" fill="none"/><circle cx="15" cy="5" r="2" fill="#c8102e"/></pattern>
+ </defs>
+</svg>
+
+<section class="hero" id="top">
+ <nav class="top" aria-label="Main"><a href="#makes">What I make</a><a href="#order">How to order</a><a href="#about">About Donna</a></nav>
+ <div class="patch" id="patch" aria-hidden="true"></div>
+ <div class="label">
+  <h1><span>Stitched by</span>Donna</h1>
+  <p>Quilted treat bags, coasters, gift tags and keepsakes, pieced by hand in 100% cotton in Alstonville.</p>
+  <div class="btns"><a class="btn fill" href="#makes">See what I make</a><a class="btn" href="#order">Message Donna</a></div>
+ </div>
+</section>
+
+<div class="binding"><div class="wrap">
+ <span><b>100%</b>cotton, always</span>
+ <span><b>Pieced,</b>paper pieced and quilted</span>
+ <span><b>Pickup</b>in Alstonville or local delivery</span>
+</div></div>
+
+<section class="makes" id="makes"><div class="wrap">
+ <div class="intro">
+  <h2>What I make</h2>
+  <p>Every piece is one of a kind, so designs change from batch to batch. Spot something you love? Send me a message and I'll put it aside for you.</p>
+ </div>
+ <div class="swatches" id="swatches" role="group" aria-label="Show items by type"></div>
+ <div class="quilt" id="quilt"></div>
+ <p class="note">Fabrics and motifs vary, so your piece may look a little different to the one shown.</p>
+</div></section>
+
+<section class="msg" id="order"><div class="wrap">
+ <div>
+  <h2>Message Donna</h2>
+  <a class="phone" href="tel:+61484852889">0484 852 889</a>
+  <div class="alt">
+   <a href="mailto:drussell058@gmail.com">drussell058@gmail.com</a>
+   <a href="https://www.facebook.com/stitchedbydonnar">Facebook: Stitched by Donna Russell</a>
+  </div>
+ </div>
+ <ol class="steps">
+  <li><div><h3>Choose your pieces</h3><p>Pick from here, or check Facebook for the newest batch.</p></div></li>
+  <li><div><h3>Call, text or message</h3><p>Tell me what you'd like and how many. Custom colours and names are welcome.</p></div></li>
+  <li><div><h3>Collect or have it delivered</h3><p>Pick up from Alstonville, or I'll drop it to you around the local area.</p></div></li>
+ </ol>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+ <div class="art" id="aboutArt" aria-hidden="true"></div>
+ <div>
+  <h2>Hello, I'm Donna</h2>
+  <p>I sew from home in Alstonville, piecing, paper piecing and quilting everything in 100% cotton. Christmas is my favourite season to sew for: cheeky reindeer, koalas in Santa hats, and treat bags for every little person on your list.</p>
+  <p>Most of my work finds a home through word of mouth and Facebook. This page puts it all in one place.</p>
+  <div class="sig">Happy browsing, Donna</div>
+ </div>
+</div></section>
+
+<div class="edge" aria-hidden="true"></div>
+<footer><div class="wrap"><span>Stitched by Donna, Alstonville NSW</span><a href="#top">Back to top</a></div></footer>
+
+<script>
+{
+/* ================= EDIT ME: products =================
+   price: a number (e.g. 15) shows "$15"; null shows "Ask for price".
+   img:   a photo path, e.g. "images/reindeer-bag.jpg". Empty uses the illustration.
+   art:   illustration when there's no photo: bag, tag, coaster, ornament, sticker, pouch, mat
+   big:   true makes the item a large feature block (use for one or two items). */
+const ITEMS = [
+ {name:"Merry Christmas reindeer treat bag", m:"reindeer", cat:"Treat bags", price:null, size:"22 × 19 cm", desc:"Lined drawstring bag with a reindeer panel, star-print trim and ribbon ties. Big enough for lollies, a small toy or a gift card.", art:"bag", f:"f-star", big:true, img:""},
+ {name:"Santa Paws treat bag", m:"dog", cat:"Treat bags", price:null, size:"22 × 19 cm", desc:"For the pet lovers. Fill it with treats for the dog.", art:"bag", f:"f-dotred", img:""},
+ {name:"Aussie animals treat bag", m:"koala", cat:"Treat bags", price:null, size:"22 × 19 cm", desc:"Koalas, wombats and friends in their Christmas hats.", art:"bag", f:"f-dotpink", img:""},
+ {name:"12 Days of Christmas treat bag", m:"tree", cat:"Treat bags", price:null, size:"22 × 19 cm", desc:"From the 12 Days of Christmas series. Collect them all.", art:"bag", f:"f-candy", img:""},
+ {name:"Fabric drawstring gift bag", m:"gift", cat:"Treat bags", price:null, size:"", desc:"All-fabric bag in bright Christmas prints. Reusable year after year.", art:"bag", f:"f-check", img:""},
+ {name:"Aussie Christmas coaster", cat:"Coasters", price:null, size:"", desc:"Quilted coaster with an Aussie Christmas motif and a bound edge.", art:"coaster", f:"f-candy", img:""},
+ {name:"Christmas mini quilt", cat:"Coasters", price:null, size:"", desc:"Little quilted square. Use it as a mug rug or hang it up.", art:"coaster", f:"f-dotpink", img:""},
+ {name:"Christmas gift tags", cat:"Gift tags", price:null, size:"", desc:"Illustrated tags with cute Christmas animals, ready to tie on presents.", art:"tag", f:"f-sprig", img:""},
+ {name:"Hanging Christmas decoration", cat:"Decorations", price:null, size:"", desc:"Round hanging ornament with a festive animal design.", art:"ornament", f:"f-check", img:""},
+ {name:"Sticker art", cat:"Stickers", price:null, size:"", desc:"Butterflies, owls and wolves in bright colours, for cards and crafts.", art:"sticker", f:"f-sprig", img:""},
+ {name:"Zippered pouch", cat:"Everyday", price:null, size:"", desc:"Padded cotton pouch for makeup, pencils or bits and pieces.", art:"pouch", f:"f-dotred", img:""},
+ {name:"Quilted table mat", cat:"Everyday", price:null, size:"", desc:"Pieced and quilted mats in designs like sailboats and sunflowers.", art:"mat", f:"f-check", img:""}
+];
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const F = id => `url(#${id})`;
+const PAL = ["#c8102e","#0f5b4f","#ffffff","#ff9ec4","#ffc93c",F("f-dotpink"),F("f-dotred"),F("f-candy"),F("f-check"),F("f-star"),F("f-sprig")];
+const pick = a => a[Math.floor(Math.random()*a.length)];
+
+/* quilt blocks, 100×100 */
+const BLOCK = {
+ hst:(a,b)=>`<rect width="100" height="100" fill="${a}"/><path d="M0 100L100 0V100Z" fill="${b}"/>`,
+ pinwheel:(a,b)=>`<rect width="100" height="100" fill="${a}"/><path d="M50 50L50 0H0Z M50 50L100 50V0Z M50 50L50 100H100Z M50 50L0 50V100Z" fill="${b}"/>`,
+ geese:(a,b)=>`<rect width="100" height="100" fill="${a}"/><path d="M0 50L50 0L100 50Z M0 100L50 50L100 100Z" fill="${b}"/>`,
+ log:(a,b,c)=>`<rect width="100" height="100" fill="${a}"/><rect x="14" y="14" width="72" height="72" fill="${b}"/><rect x="30" y="30" width="40" height="40" fill="${a}"/><rect x="42" y="42" width="16" height="16" fill="${c}"/>`,
+ star:(a,b,c)=>`<rect width="100" height="100" fill="${a}"/><rect x="25" y="25" width="50" height="50" fill="${b}"/><path d="M25 25L50 0L75 25Z M75 25L100 50L75 75Z M75 75L50 100L25 75Z M25 75L0 50L25 25Z" fill="${b}"/><rect x="38" y="38" width="24" height="24" fill="${c}"/>`,
+ four:(a,b)=>`<rect width="100" height="100" fill="${a}"/><rect width="50" height="50" fill="${b}"/><rect x="50" y="50" width="50" height="50" fill="${b}"/>`,
+ solid:(a)=>`<rect width="100" height="100" fill="${a}"/>`,
+ heart:(a,b)=>`<rect width="100" height="100" fill="${a}"/><path d="M50 78C20 58 22 30 38 30C45 30 50 36 50 40C50 36 55 30 62 30C78 30 80 58 50 78Z" fill="${b}"/>`
+};
+const KINDS = Object.keys(BLOCK);
+const block = (k,a,b,c,extra="") => `<svg viewBox="0 0 100 100" ${extra}>${BLOCK[k](a,b,c)}<rect x="4" y="4" width="92" height="92" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.4" stroke-dasharray="4 3"/></svg>`;
+const randBlock = (i) => {
+ let a=pick(PAL), b=pick(PAL); while(b===a) b=pick(PAL);
+ return block(pick(KINDS), a, b, pick(["#ffc93c","#c8102e","#fff"]), `style="--d:${(i%13)*45+Math.random()*260}ms"`);
+};
+
+/* hero patchwork */
+const hero = document.querySelector('.hero');
+document.getElementById('patch').innerHTML = Array.from({length:96}, (_,i)=>randBlock(i)).join('');
+requestAnimationFrame(()=>hero.classList.add('go'));
+
+/* about art: a 3×3 sampler */
+document.getElementById('aboutArt').innerHTML = `<svg viewBox="0 0 300 300">${
+ [["star","#0f5b4f","#c8102e","#ffc93c"],["hst",F("f-dotpink"),"#c8102e"],["pinwheel","#fff",F("f-check")],
+  ["geese",F("f-sprig"),"#c8102e"],["heart","#ff9ec4","#c8102e"],["log",F("f-candy"),"#fff","#0f5b4f"],
+  ["four","#ffc93c",F("f-dotred")],["pinwheel",F("f-star"),"#ff9ec4"],["star","#fff",F("f-dotpink"),"#0f5b4f"]]
+ .map((d,i)=>`<g transform="translate(${(i%3)*100} ${Math.floor(i/3)*100})">${BLOCK[d[0]](d[1],d[2],d[3])}</g>`).join('')
+}</svg>`;
+
+/* motifs printed on the bag panel, centred at 0,0 */
+const MOTIF = {
+ reindeer:`<path d="M-14-20Q-24-34-18-40M-18-30L-26-32M14-20Q24-34 18-40M18-30L26-32" stroke="#7a4a2a" stroke-width="3" fill="none" stroke-linecap="round"/><circle r="18" fill="#b9805a"/><circle cx="-6" cy="-3" r="2.6" fill="#24161a"/><circle cx="6" cy="-3" r="2.6" fill="#24161a"/><circle cy="8" r="5.5" fill="#c8102e"/>`,
+ dog:`<path d="M-18-10Q-28 4-20 14L-12-2Z M18-10Q28 4 20 14L12-2Z" fill="#6b4630"/><circle r="17" fill="#d9a777"/><circle cx="-6" cy="-3" r="2.6" fill="#24161a"/><circle cx="6" cy="-3" r="2.6" fill="#24161a"/><ellipse cy="6" rx="5" ry="3.6" fill="#24161a"/><path d="M-18-14Q0-38 18-14Z" fill="#c8102e"/><circle cx="19" cy="-15" r="4.5" fill="#fff"/>`,
+ koala:`<circle cx="-17" cy="-10" r="10" fill="#9aa1a6"/><circle cx="17" cy="-10" r="10" fill="#9aa1a6"/><circle cx="-17" cy="-10" r="5" fill="#ff9ec4"/><circle cx="17" cy="-10" r="5" fill="#ff9ec4"/><circle r="17" fill="#b4bbc0"/><circle cx="-6" cy="-3" r="2.4" fill="#24161a"/><circle cx="6" cy="-3" r="2.4" fill="#24161a"/><ellipse cy="6" rx="5" ry="6" fill="#3b3438"/>`,
+ tree:`<path d="M0-30L18 10H-18Z" fill="#0f5b4f"/><path d="M0-14L22 22H-22Z" fill="#0f5b4f"/><rect x="-4" y="22" width="8" height="8" fill="#7a3b2a"/><circle cy="-30" r="4" fill="#ffc93c"/><circle cx="-6" cy="4" r="3" fill="#c8102e"/><circle cx="8" cy="14" r="3" fill="#ff9ec4"/><circle cx="4" cy="-6" r="2.5" fill="#ffc93c"/>`,
+ gift:`<rect x="-18" y="-12" width="36" height="30" fill="#ff9ec4"/><rect x="-21" y="-18" width="42" height="9" fill="#c8102e"/><rect x="-3" y="-18" width="6" height="36" fill="#c8102e"/><path d="M0-18Q-14-32-14-22Q-12-16 0-18Q14-32 14-22Q12-16 0-18Z" fill="#c8102e"/>`
+};
+/* product illustrations, 200×200 on a fabric ground */
+const ART = {
+ bag:(m)=>`<ellipse cx="100" cy="178" rx="56" ry="6" fill="rgba(0,0,0,.2)"/>
+  <path d="M52 76H148V164Q148 176 136 176H64Q52 176 52 164Z" fill="#fff"/>
+  <path d="M52 150H148V164Q148 176 136 176H64Q52 176 52 164Z" fill="url(#f-dotred)"/>
+  <path d="M48 76Q56 58 64 74Q72 52 82 72Q90 50 100 70Q110 50 118 72Q128 52 136 74Q144 58 152 76Z" fill="#fff" stroke="rgba(0,0,0,.14)" stroke-width="1.5"/>
+  <path d="M50 84H150" stroke="rgba(0,0,0,.12)" stroke-width="3"/>
+  <path d="M100 84Q84 96 78 106M100 84Q116 96 122 106" stroke="#c8102e" stroke-width="2.5" fill="none"/>
+  <path d="M100 84Q88 74 86 82Q88 90 100 84Q112 74 114 82Q112 90 100 84Z" fill="#c8102e"/>
+  <g transform="translate(100 120)">${MOTIF[m]||MOTIF.reindeer}</g>`,
+ tag:()=>`<g transform="rotate(-9 100 110)"><path d="M58 60L78 40H150V172H58Z" fill="#fff" stroke="rgba(0,0,0,.15)"/><circle cx="80" cy="62" r="6" fill="#ff9ec4"/><path d="M80 62Q58 14 26 36" stroke="#c8102e" stroke-width="3" fill="none"/><circle cx="104" cy="112" r="22" fill="#9b6b4a"/><path d="M82 98Q104 66 126 98Z" fill="#c8102e"/><circle cx="127" cy="96" r="6" fill="#fff"/><text x="104" y="158" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="17" fill="#c8102e">Merry Christmas</text></g>`,
+ coaster:()=>`<rect x="34" y="34" width="132" height="132" fill="#c8102e"/><rect x="48" y="48" width="104" height="104" fill="#fff"/><rect x="41" y="41" width="118" height="118" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/><path d="M100 64l26 62H74z" fill="#0f5b4f"/><rect x="94" y="126" width="12" height="12" fill="#7a3b2a"/><circle cx="100" cy="62" r="6" fill="#ffc93c"/><circle cx="90" cy="100" r="4" fill="#c8102e"/><circle cx="110" cy="112" r="4" fill="#ff9ec4"/>`,
+ ornament:()=>`<path d="M100 14V50" stroke="#c8102e" stroke-width="3"/><circle cx="100" cy="116" r="64" fill="#fff" stroke="#c8102e" stroke-width="10"/><circle cx="100" cy="120" r="28" fill="#9b6b4a"/><circle cx="91" cy="116" r="3.4" fill="#24161a"/><circle cx="109" cy="116" r="3.4" fill="#24161a"/><path d="M72 102Q100 60 128 102Z" fill="#c8102e"/><circle cx="129" cy="100" r="7" fill="#fff"/>`,
+ sticker:()=>`<rect x="36" y="26" width="128" height="156" fill="#fff" stroke="rgba(0,0,0,.12)"/>${[0,1,2].map(r=>[0,1,2].map(c=>`<g transform="translate(${62+c*38} ${58+r*46})"><path d="M0 0Q-17-18-15 5Q-10 15 0 4Q10 15 15 5Q17-18 0 0Z" fill="${["#c8102e","#0f5b4f","#ff9ec4","#ffc93c"][(r*3+c)%4]}"/><path d="M0-6V12" stroke="#24161a" stroke-width="1.6"/></g>`).join('')).join('')}`,
+ pouch:()=>`<path d="M36 78H164L154 166Q100 178 46 166Z" fill="url(#f-dotpink)" stroke="rgba(0,0,0,.12)"/><rect x="36" y="70" width="128" height="14" fill="#0f5b4f"/><rect x="156" y="60" width="10" height="30" fill="#ddd"/><circle cx="161" cy="94" r="5" fill="#c8102e"/>`,
+ mat:()=>`<rect x="24" y="44" width="152" height="112" fill="#2d8a78"/><rect x="32" y="52" width="136" height="96" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/><path d="M58 128h84l-10 14H68z" fill="#7a3b2a"/><path d="M98 66v60H66z" fill="#fff"/><path d="M104 78v48h26z" fill="#c8102e"/><circle cx="148" cy="72" r="9" fill="#ffc93c"/>`
+};
+const thumb = it => it.img
+ ? `<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">`
+ : `<svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(it.name)}"><rect width="200" height="200" fill="${F(it.f||'f-dotpink')}"/><rect x="18" y="18" width="164" height="164" fill="rgba(255,255,255,.55)"/>${(ART[it.art]||ART.bag)(it.m)}</svg>`;
+const priceTag = p => (p===null||p===undefined||p==="") ? `<span class="price ask">Ask for price</span>`
+ : `<span class="price">$${esc(Number(p)%1 ? Number(p).toFixed(2) : Number(p))}</span>`;
+
+/* swatch filters: each category gets its own fabric */
+const cats = ["Everything", ...new Set(ITEMS.map(i=>i.cat))];
+const swatchFab = ["f-candy","f-star","f-dotpink","f-sprig","f-check","f-dotred","f-candy"];
+const sEl = document.getElementById('swatches'), qEl = document.getElementById('quilt');
+let cur = "Everything";
+try { const s = localStorage.getItem('sbd-cat'); if (s && cats.includes(s)) cur = s; } catch(e) {}
+
+function render(){
+ sEl.innerHTML = cats.map((c,i)=>`<button type="button" data-c="${esc(c)}" aria-pressed="${c===cur}"><svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" fill="${F(swatchFab[i%swatchFab.length])}"/></svg>${esc(c)}</button>`).join('');
+ const list = ITEMS.filter(i=>cur==="Everything"||i.cat===cur);
+ qEl.innerHTML = list.length ? list.map(it=>`<article class="item${it.big&&cur==="Everything"?' big':''}"><div class="ph">${thumb(it)}</div><div class="bd"><span class="cat">${esc(it.cat)}${it.size?` · ${esc(it.size)}`:''}</span><h3>${esc(it.name)}</h3><p>${esc(it.desc)}</p><div class="row">${priceTag(it.price)}</div></div></article>`).join('')
+  : `<div class="empty">Nothing in this one right now. Message me and I can make some.</div>`;
+ if (list.length) qEl.insertAdjacentHTML('beforeend', `<a class="item custom" href="#order"><h3>Want something made just for you?</h3><p>Pick the fabric, colours or a name, and I'll stitch it to order.</p><span>Ask about a custom piece</span></a>`);
+ if (typeof fill === 'function') fill();
+}
+/* stretch the custom-order block across whatever is left of the last row */
+function fill(){
+ const c = qEl.querySelector('.custom'); if(!c) return;
+ c.style.gridColumn = '';
+ const cols = getComputedStyle(qEl).gridTemplateColumns.split(' ').length;
+ let used = 0; for (const el of qEl.children) if (el!==c) used += el.classList.contains('big') && cols>1 ? 2 : 1;
+ const left = cols - (used % cols);
+ c.style.gridColumn = `span ${Math.max(1,left)}`;
+}
+const ro = new ResizeObserver(fill); ro.observe(qEl);
+sEl.addEventListener('click', e=>{
+ const b = e.target.closest('button'); if(!b) return;
+ cur = b.dataset.c; try { localStorage.setItem('sbd-cat', cur); } catch(e) {}
+ render();
+});
+render();
+}
+</script>
+</body>
+</html>
